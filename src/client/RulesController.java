@@ -1,13 +1,18 @@
 package client;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import engine.Engine;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -16,6 +21,7 @@ public class RulesController implements Initializable
 {
 
 	private Engine mpampis;
+	private String name;
 	
 	
 	@FXML private Button btnApply;
@@ -83,14 +89,9 @@ public class RulesController implements Initializable
 		
 		
 	}
-	//get engine element from firstController
-	public void getEngine(Engine engine) {
-		this.mpampis = engine;
-		
-	}
 	
 	@FXML
-	private void button()
+	private void button() throws IOException
 	{
 		
 		System.out.println("eimai mesa ;)");
@@ -190,6 +191,19 @@ public class RulesController implements Initializable
 		mpampis.loadFileAndCharacterizeBlocks();
 		//String path = "C:\\Users\\user\\Desktop\\gg.pdf";
 		//mpampis.exportPdf(path);
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("export.fxml"));
+		Parent exportersScreen = (Parent) loader.load();
+		Scene exportersScene = new Scene(exportersScreen);
+		
+		ExportController exportController = loader.getController();//Get controller 
+        exportController.getEngine(mpampis); //Pass data you.
+        exportController.getName(name);
+        
+		Stage s = new Stage();
+		s.setTitle("Exporters");
+		s.setScene(exportersScene);
+		s.show();
 	}
 	
 	//methods for checkBox
@@ -265,6 +279,16 @@ public class RulesController implements Initializable
 			omitText.setDisable(true);
 		}
 	}
+	
+	//get engine element from firstController
+	public void getEngine(Engine engine) {
+		this.mpampis = engine;
+		
+	}
+	public void getName(String name) {
+		this.name = name;
+		
+	}	
 	/*
 	@FXML
 	private void apply() {
@@ -292,6 +316,7 @@ public class RulesController implements Initializable
 		
 	}
 	*/
+	
 	
 	
 }

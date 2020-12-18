@@ -23,11 +23,11 @@ public class FirstController implements Initializable
 {
 
 	private String path;
-	private String outfile;
+	//private String outfile;
 	private String name;
 	private String type;
 	private Engine engine;
-	private String namee;
+	//private String namee;
 	private List<String> stats;
 	
 	@FXML
@@ -51,8 +51,8 @@ public class FirstController implements Initializable
 		btnOpen.setDisable(true);
 		btnNext.setDisable(true);
 		btnShowStatistics.setDisable(true);
-		btnPDF.setDisable(true);
-		btnMD.setDisable(true);
+		//btnPDF.setDisable(true);
+		//btnMD.setDisable(true);
 	}
 	
 	//openButton
@@ -135,6 +135,7 @@ public class FirstController implements Initializable
 		
         RulesController rulesController = loader.getController();//Get controller 
         rulesController.getEngine(engine); //Pass data you.
+        rulesController.getName(name);
         
 		Stage s = new Stage();
 		s.setTitle("Set Rules");
@@ -145,7 +146,7 @@ public class FirstController implements Initializable
 		btnMD.setDisable(false);
 	}
 	
-	
+	/*
 	//EXPORT METHODS
 	public void exportPDF()
 	{
@@ -170,4 +171,5 @@ public class FirstController implements Initializable
 		namee = outfile + ".md";
 		engine.exportMarkDown(namee);
 	}
+	*/
 }
