@@ -1,5 +1,6 @@
 package client;
 
+import java.awt.Panel;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -12,6 +13,7 @@ public class SecondController implements Initializable{
 
 	@FXML private Label text;
 	@FXML private ScrollPane panel; 
+	@FXML private Panel content;
 	
 	public void getStats(List<String> stats)
 	{
@@ -23,8 +25,10 @@ public class SecondController implements Initializable{
 			//System.out.print(t);
 
 		}
-		text.setText(t);
-		//panel.setContent(text);
+		//text.setText(t);;
+		
+		panel.setContent(text);
+		//panel.setPannable(true);
 	}
 	
 	//mipws na to bgaloume?

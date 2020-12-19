@@ -1,6 +1,10 @@
 package client;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.swing.JOptionPane;
 
 import engine.Engine;
 import javafx.fxml.FXML;
@@ -23,15 +27,20 @@ public class ExportController
 	//EXPORT METHODS
 		public void exportPDF()
 		{
+		
 			FileChooser chooser = new FileChooser();
 			chooser.setTitle("Save as PDF");
 			chooser.setInitialFileName( name );
 			File file = chooser.showSaveDialog(null);
-			
-			outfile = file.getAbsolutePath();
-			namee = outfile + ".pdf";
-			tasia.exportPdf(namee);	
+			if (file != null) {
+				outfile = file.getAbsolutePath();
+				namee = outfile + ".pdf";
+				tasia.exportPdf(namee);
+			}else{
+				System.out.println("file is not valid");
+			}
 		}
+		
 		
 		public void exportMarkDown()
 		{
@@ -39,10 +48,14 @@ public class ExportController
 			chooser.setTitle("Save as Markdown");
 			chooser.setInitialFileName( name );
 			File file = chooser.showSaveDialog(null);
+			if (file != null) {
+				outfile = file.getAbsolutePath();
+				namee = outfile + ".md";
+				tasia.exportMarkDown(namee);
+			}else{
+				System.out.println("file is not valid");
+			}
 			
-			outfile = file.getAbsolutePath();
-			namee = outfile + ".md";
-			tasia.exportMarkDown(namee);
 		}
 		
 		

@@ -1,5 +1,6 @@
 package client;
 
+import java.awt.Panel;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -32,10 +33,10 @@ public class FirstController implements Initializable
 	
 	@FXML
 	private Button btnShowStatistics;
-	@FXML
-	private Button btnPDF;
-	@FXML
-	private Button btnMD;
+	//@FXML
+	//private Button btnPDF;
+	//@FXML
+	//private Button btnMD;
 	@FXML
 	private Button btnOpen;
 	@FXML
@@ -61,23 +62,27 @@ public class FirstController implements Initializable
 	{
 		FileChooser chooser = new FileChooser();
 		File file = chooser.showOpenDialog(null);
-		
-		path = file.getAbsolutePath();
-		String[] parts = path.split("\\\\");
-		String x = parts[parts.length-1];
-		String[] y = x.split("\\.");
-		name = y[0];
-		
-		System.out.println(file.getAbsolutePath());
-		System.out.println(type);
-		System.out.println(name);
-		
-		if(name!=null  || path!=null || type!=null) {
-			btnNext.setDisable(false);
-			btnShowStatistics.setDisable(false);
+		if (file != null) {
+			path = file.getAbsolutePath();
+			String[] parts = path.split("\\\\");
+			String x = parts[parts.length-1];
+			String[] y = x.split("\\.");
+			name = y[0];
+			
+			System.out.println(file.getAbsolutePath());
+			System.out.println(type);
+			System.out.println(name);
+			
+			if(name!=null  || path!=null || type!=null) {
+				btnNext.setDisable(false);
+				btnShowStatistics.setDisable(false);
+			}
+			engine = new Engine(path, type, name);
+		    stats = engine.reportWithStats();
 		}
-		engine = new Engine(path, type, name);
-	    stats = engine.reportWithStats();
+		else {
+			System.out.println("file is not valid");
+		}
 	}
 
 	//checkbox annotated
@@ -142,8 +147,8 @@ public class FirstController implements Initializable
 		s.setScene(rulesScene);
 		s.show();
 		
-		btnPDF.setDisable(false);
-		btnMD.setDisable(false);
+		//btnPDF.setDisable(false);
+		//btnMD.setDisable(false);
 	}
 	
 	/*
