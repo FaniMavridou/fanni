@@ -1,11 +1,6 @@
 package client;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import javax.swing.JOptionPane;
-
 import engine.Engine;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

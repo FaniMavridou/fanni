@@ -25,7 +25,7 @@ public class SecondController implements Initializable{
 			//System.out.print(t);
 
 		}
-		//text.setText(t);;
+		text.setText(t);;
 		
 		panel.setContent(text);
 		//panel.setPannable(true);

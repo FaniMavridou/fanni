@@ -1,6 +1,4 @@
 package client;
-
-import java.awt.Panel;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -47,8 +45,14 @@ public class FirstController implements Initializable
 	private CheckBox checkRaw;
 	
 	
+	public FirstController() {
+		
+	}
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		System.out.println(arg0); //giati?
+		System.out.println(arg1);
 		btnOpen.setDisable(true);
 		btnNext.setDisable(true);
 		btnShowStatistics.setDisable(true);
@@ -149,6 +153,37 @@ public class FirstController implements Initializable
 		
 		//btnPDF.setDisable(false);
 		//btnMD.setDisable(false);
+	}
+	public void setPath(String p) {
+		this.path = p;
+	}
+	public String getPath() {
+		return path;
+	}
+	
+	public void setType(String t) {
+		this.type = t;
+	}
+	
+	public String getType() {
+		return type;
+	}
+	
+	public void setName(String n) {
+		this.name = n;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public FirstController getController() {
+		return this;
+	}
+	
+	public void initializeButtonForTest() {
+		btnNext = new Button();
+		btnShowStatistics = new Button();
 	}
 	
 	/*
