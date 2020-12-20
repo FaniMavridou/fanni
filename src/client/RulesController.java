@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import engine.Engine;
+import engine.IPlainTextDocumentEngine;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,10 +19,9 @@ import javafx.scene.control.ChoiceBox;
 
 public class RulesController implements Initializable
 {
-
-	private Engine mpampis;
+	private IPlainTextDocumentEngine mpampis;
 	private String name;
-	
+	private String type;
 	
 	@FXML private Button btnApply;
 	@FXML private Button btnContinue;
@@ -52,9 +51,25 @@ public class RulesController implements Initializable
 	@FXML private TextField boldText;
 	@FXML private TextField omitText;
 	
+	
+	//get engine element from firstController
+		public void passData(IPlainTextDocumentEngine engine,String name,String type) {
+			this.mpampis = engine;
+			this.name = name;
+			this.type = type;
+			
+		}
+		
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1)
 	{
+		
+		pr1.setDisable(true);
+		pr2.setDisable(true);
+		pr3.setDisable(true);
+		pr4.setDisable(true);
+		pr5.setDisable(true);
+		
 		h1Text.setDisable(true);
 		h2Text.setDisable(true);
 		italicText.setDisable(true);
@@ -85,21 +100,27 @@ public class RulesController implements Initializable
 		
 		omitChoiceBox.getItems().add("STARTS_WITH");
 		omitChoiceBox.getItems().add("ALL_CAPS");
-		omitChoiceBox.getItems().add("POSITIONS");
-		
-		
+		omitChoiceBox.getItems().add("POSITIONS");	
 	}
 	
 	@FXML
 	private void button() throws IOException
 	{
-		
-		System.out.println("eimai mesa ;)");
 		List<List<String>> ruleSetString = new ArrayList<>();
 		
 		
 		String input;
 		String selectedChoice;
+		System.out.println("name IS:" + name);
+		System.out.println("TYPE IS:" + type);
+		if(type == "RAW") {
+			
+			pr1.setDisable(true);
+			pr2.setDisable(true);
+			pr3.setDisable(true);
+			pr4.setDisable(true);
+			pr5.setDisable(true);
+		}
 		
 		if(H1Box.isSelected()) {
 			List<String> rule = new ArrayList<>();
@@ -129,7 +150,7 @@ public class RulesController implements Initializable
 			rule.add(input);	
 			ruleSetString.add(rule);
 			if(selectedChoice.equals("STARTS_WITH")) {
-				if(pr1.isSelected()) {
+				if(pr2.isSelected()) {
 					List<String> prefixes = new ArrayList<>();
 					prefixes.add(input);
 					mpampis.registerInputRuleSetForAnnotatedFiles(ruleSetString, prefixes);
@@ -146,7 +167,7 @@ public class RulesController implements Initializable
 			rule.add(input);	
 			ruleSetString.add(rule);
 			if(selectedChoice.equals("STARTS_WITH")) {
-				if(pr1.isSelected()) {
+				if(pr3.isSelected()) {
 					List<String> prefixes = new ArrayList<>();
 					prefixes.add(input);
 					mpampis.registerInputRuleSetForAnnotatedFiles(ruleSetString, prefixes);
@@ -162,7 +183,7 @@ public class RulesController implements Initializable
 			rule.add(input);	
 			ruleSetString.add(rule);
 			if(selectedChoice.equals("STARTS_WITH")) {
-				if(pr1.isSelected()) {
+				if(pr4.isSelected()) {
 					List<String> prefixes = new ArrayList<>();
 					prefixes.add(input);
 					mpampis.registerInputRuleSetForAnnotatedFiles(ruleSetString, prefixes);
@@ -180,7 +201,7 @@ public class RulesController implements Initializable
 			rule.add(input);	
 			ruleSetString.add(rule);
 			if(selectedChoice.equals("STARTS_WITH")) {
-				if(pr1.isSelected()) {
+				if(pr5.isSelected()) {
 					List<String> prefixes = new ArrayList<>();
 					prefixes.add(input);
 					mpampis.registerInputRuleSetForAnnotatedFiles(ruleSetString, prefixes);
@@ -213,11 +234,15 @@ public class RulesController implements Initializable
 		if(H1Box.isSelected()) {
 			H1ChoiceBox.setDisable(false);
 			h1Text.setDisable(false);
+			if(type == "ANNOTATED") {
+				pr1.setDisable(false);
+			}
 			
 		}
 		else {
 			H1ChoiceBox.setDisable(true);
 			h1Text.setDisable(true);
+			pr1.setDisable(true);
 		}
 	}
 
@@ -227,11 +252,14 @@ public class RulesController implements Initializable
 		if(H2Box.isSelected()) {
 			H2ChoiceBox.setDisable(false);
 			h2Text.setDisable(false);
-			
+			if(type == "ANNOTATED") {
+				pr2.setDisable(false);
+			}
 		}
 		else {
 			H2ChoiceBox.setDisable(true);
 			h2Text.setDisable(true);
+			pr2.setDisable(true);
 		}
 	}
 	
@@ -242,11 +270,15 @@ public class RulesController implements Initializable
 		if(ItalicBox.isSelected()) {
 			italicChoiceBox.setDisable(false);
 			italicText.setDisable(false);
+			if(type == "ANNOTATED") {
+				pr3.setDisable(false);
+			}
 			
 		}
 		else {
 			italicChoiceBox.setDisable(true);
 			italicText.setDisable(true);
+			pr3.setDisable(true);
 		}
 	}
 	
@@ -257,11 +289,15 @@ public class RulesController implements Initializable
 		if(BoldBox.isSelected()) {
 			boldChoiceBox.setDisable(false);
 			boldText.setDisable(false);
+			if(type == "ANNOTATED") {
+				pr4.setDisable(false);
+			}
 			
 		}
 		else {
 			boldChoiceBox.setDisable(true);
 			boldText.setDisable(true);
+			pr4.setDisable(true);
 		}
 	}
 	
@@ -272,23 +308,18 @@ public class RulesController implements Initializable
 		if(OmitBox.isSelected()) {
 			omitChoiceBox.setDisable(false);
 			omitText.setDisable(false);
-			
+			if(type == "ANNOTATED") {
+				pr5.setDisable(false);
+			}
 		}
 		else {
 			omitChoiceBox.setDisable(true);
 			omitText.setDisable(true);
+			pr5.setDisable(true);
 		}
 	}
 	
-	//get engine element from firstController
-	public void getEngine(Engine engine) {
-		this.mpampis = engine;
-		
-	}
-	public void getName(String name) {
-		this.name = name;
-		
-	}	
+	
 	/*
 	@FXML
 	private void apply() {
@@ -316,6 +347,8 @@ public class RulesController implements Initializable
 		
 	}
 	*/
+
+	
 	
 	
 	

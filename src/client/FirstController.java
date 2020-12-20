@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 
 import engine.Engine;
+import engine.IPlainTextDocumentEngine;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +26,7 @@ public class FirstController implements Initializable
 	//private String outfile;
 	private String name;
 	private String type;
-	private Engine engine;
+	private IPlainTextDocumentEngine engine;
 	//private String namee;
 	private List<String> stats;
 	
@@ -125,7 +126,6 @@ public class FirstController implements Initializable
 		
 		Parent secondScreen = (Parent) loader.load();
 		Scene secondScene = new Scene(secondScreen);
-		
         SecondController secondController = loader.getController();  //Get controller
         secondController.getStats(stats);  //Pass data 
 		
@@ -138,13 +138,16 @@ public class FirstController implements Initializable
 	//create new rules.
 	public void rulesButton(ActionEvent event) throws IOException
 	{
+		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("rulesScreen.fxml"));
+		
 		Parent rulesScreen = (Parent) loader.load();
 		Scene rulesScene = new Scene(rulesScreen);
-		
-        RulesController rulesController = loader.getController();//Get controller 
-        rulesController.getEngine(engine); //Pass data you.
-        rulesController.getName(name);
+		RulesController rulesController = loader.getController();//Get controller 
+        rulesController.passData(engine,name,type); //Pass data you.
+        //rulesController.getName(this.name);
+        //rulesController.getType(type);
+        
         
 		Stage s = new Stage();
 		s.setTitle("Set Rules");

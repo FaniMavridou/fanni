@@ -26,10 +26,10 @@
       <ChoiceBox fx:id="omitChoiceBox" layoutX="154.0" layoutY="412.0" prefHeight="42.0" prefWidth="150.0" />
       <CheckBox fx:id="OmitBox" layoutX="46.0" layoutY="408.0" mnemonicParsing="false" onAction="#checkOmit" prefHeight="50.0" prefWidth="63.0" text="Omit" />
       <TextField fx:id="omitText" layoutX="340.0" layoutY="412.0" prefHeight="42.0" prefWidth="187.0" />
-      <CheckBox fx:id="H1Box1" layoutX="564.0" layoutY="408.0" mnemonicParsing="false" onAction="#checkH1" prefHeight="50.0" prefWidth="78.0" text="prefix" />
-      <CheckBox fx:id="H1Box2" layoutX="564.0" layoutY="331.0" mnemonicParsing="false" onAction="#checkH1" prefHeight="50.0" prefWidth="92.0" text="prefix" />
-      <CheckBox fx:id="H1Box3" layoutX="564.0" layoutY="249.0" mnemonicParsing="false" onAction="#checkH1" prefHeight="50.0" prefWidth="92.0" text="prefix" />
-      <CheckBox fx:id="H1Box4" layoutX="564.0" layoutY="171.0" mnemonicParsing="false" onAction="#checkH1" prefHeight="50.0" prefWidth="92.0" text="prefix" />
+      <CheckBox fx:id="pr5" layoutX="564.0" layoutY="408.0" mnemonicParsing="false" onAction="#checkH1" prefHeight="50.0" prefWidth="78.0" text="prefix" />
+      <CheckBox fx:id="pr4" layoutX="564.0" layoutY="331.0" mnemonicParsing="false" onAction="#checkH1" prefHeight="50.0" prefWidth="92.0" text="prefix" />
+      <CheckBox fx:id="pr3" layoutX="564.0" layoutY="249.0" mnemonicParsing="false" onAction="#checkH1" prefHeight="50.0" prefWidth="92.0" text="prefix" />
+      <CheckBox fx:id="pr2" layoutX="564.0" layoutY="171.0" mnemonicParsing="false" onAction="#checkH1" prefHeight="50.0" prefWidth="92.0" text="prefix" />
       <CheckBox fx:id="pr1" layoutX="564.0" layoutY="96.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="92.0" text="prefix" />
       <Text layoutX="532.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="if file type is  ANNOTATED check box &quot;prefix&quot;" wrappingWidth="204.99999134987593" />
       <Line endX="593.0" endY="62.50001525878906" startX="593.0" startY="96.0" />

@@ -1,7 +1,7 @@
 package client;
 
 import java.io.File;
-import engine.Engine;
+import engine.IPlainTextDocumentEngine;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.FileChooser;
@@ -9,7 +9,7 @@ import javafx.stage.FileChooser;
 public class ExportController
 {
 	
-	private Engine tasia;
+	private IPlainTextDocumentEngine tasia;
 	private String namee;
 	private String outfile;
 	private String name;
@@ -41,7 +41,7 @@ public class ExportController
 		{
 			FileChooser chooser = new FileChooser();
 			chooser.setTitle("Save as Markdown");
-			chooser.setInitialFileName( name );
+			//chooser.setInitialFileName( name );
 			File file = chooser.showSaveDialog(null);
 			if (file != null) {
 				outfile = file.getAbsolutePath();
@@ -62,7 +62,7 @@ public class ExportController
 			this.name = name;
 			
 		}
-		public void getEngine(Engine mpampis) {
+		public void getEngine(IPlainTextDocumentEngine mpampis) {
 			this.tasia = mpampis;
 			
 		}

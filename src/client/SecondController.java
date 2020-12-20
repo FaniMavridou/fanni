@@ -17,6 +17,7 @@ public class SecondController implements Initializable{
 	
 	public void getStats(List<String> stats)
 	{
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		String t = "";
 		for(String string : stats)
 		{
