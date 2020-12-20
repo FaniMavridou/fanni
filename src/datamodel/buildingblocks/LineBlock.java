@@ -12,7 +12,7 @@ public class LineBlock {
 	
 	
 	public LineBlock(List<String> lines, int position) {
-			
+		
 		this.lines = lines;
 		this.position = position;
 	}
@@ -64,4 +64,6 @@ public class LineBlock {
 		
 		return str;
 	}
+	
+	
 }

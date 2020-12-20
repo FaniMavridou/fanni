@@ -36,6 +36,8 @@ public class MarkdownExporter {
 				if(paragraph == null) { 
 					continue; 
 				}
+				paragraph = paragraph + "\n\n";
+				
 				writer.write(paragraph);
 				paragraphsNumber++;
 			}
@@ -48,22 +50,25 @@ public class MarkdownExporter {
 		return 0;
 	}
 	
+	
+	//  + " " USED ONLY because teacher's outputReferences
+	//  had  + " " on the end of each paragraph
+	//  and i used a different loadParagraphs method
 	private String setupLines(LineBlock lineblock)
 	{
 		String paragraph = String.join(" ", lineblock.getLines());
 		
-		
 		switch( lineblock.getStyle() )
 		{
-			case OMITTED:
+			case OMITTED: 
 				return null;
 				
 			case H1 : 
-				paragraph = "#" + paragraph + "\n\n";
+				paragraph = "#" + paragraph + " ";
 				return paragraph;
 				
 			case H2 : 
-				paragraph = "##" + paragraph + "\n\n";
+				paragraph = "##" + paragraph + " ";
 				return paragraph;
 			// default	
 			case NORMAL:
@@ -72,17 +77,16 @@ public class MarkdownExporter {
 		switch( lineblock.getFormat() )
 		{
 			case BOLD: 
-				paragraph = "**" + paragraph + "**";
+				paragraph = "**" + paragraph + " " + "**";
 				break;
 				
 			case ITALICS :
-				paragraph = "*" + paragraph + "*";
+				paragraph = "_" + paragraph + " " + "_";
 				break;
 			// default
 			case REGULAR :
+				paragraph = paragraph + " ";
 		}
-		paragraph = paragraph + "\n\n";
-		
 		return paragraph;
 	}
 }

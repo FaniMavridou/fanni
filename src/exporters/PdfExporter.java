@@ -72,7 +72,7 @@ public class PdfExporter {
 	
 private Font determineFont(LineBlock lineblock)
 {
-	Font font = new Font(FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
+	Font font = new Font(FontFamily.TIMES_ROMAN, 12, Font.NORMAL);;
 	
 	switch( lineblock.getStyle() )
 	{
@@ -80,19 +80,19 @@ private Font determineFont(LineBlock lineblock)
 			return null;
 			
 		case H1 : 
-			font.setSize(32);
-			break;
+			font.setSize(24); // Could be 32 for H1
+			return font;
 			
 		case H2 : 
-			font.setSize(24);
-			break;
+			font.setSize(18); // And 24 for H2
+			return font;
 		// default	
 		case NORMAL:
 	}
 	
 	switch( lineblock.getFormat() )
 	{
-		case BOLD:
+		case BOLD: 
 			font.setStyle(1);
 			break;
 			

@@ -73,12 +73,13 @@ public class TestRawFileLineLoader {
 	private boolean compareLoadedParagraphs(List<LineBlock> lineblocks, List<LineBlock> hippoLineBlocks)
 	{
 		boolean localComparison = false;
+		String newStats;
+		String defaultStats;
 		
 		for (int i = 0; i < hippoLineBlocks.size(); i++)
 		{
-			String newStats = String.join(" ", lineblocks.get(i).getStatsAsString());
-			String defaultStats = String.join(" ", hippoLineBlocks.get(i).getStatsAsString());
-			
+			newStats = String.join(" ", lineblocks.get(i).getStatsAsString());
+			defaultStats = String.join(" ", hippoLineBlocks.get(i).getStatsAsString());
 			if ( newStats.equals(defaultStats))
 			{
 				localComparison = true;

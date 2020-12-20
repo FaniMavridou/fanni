@@ -18,9 +18,13 @@ public class Document {
 	public Document(String inputPath, DocumentRawType fileType) {
 		this.inputPath = inputPath;
 		this.fileType = fileType;
+		loadFiles(inputPath);
+	}
+	
+	private void loadFiles(String inputPath){
 		
 		RawFileLineLoader loader = new RawFileLineLoader();
-		this.lineblocks = loader.load(this.inputPath, lineblocks);
+		this.lineblocks = loader.load(this.inputPath, this.lineblocks);
 	}
 	
 	public DocumentRawType getInputFileType() {

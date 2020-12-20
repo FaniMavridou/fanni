@@ -10,7 +10,6 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
 import org.apache.commons.io.FileUtils;
 
 import engine.Engine;
@@ -68,7 +67,6 @@ public class TestEngine {
 		ruleset = engine.registerInputRuleSetForAnnotatedFiles(inputSpec, prefixes).toString();
 		assertEquals(profile.strip(), ruleset.strip());
 	}
-	
 
 	private static String setupProfileEcon() {
 		inputSpec = new ArrayList<List<String>>();
@@ -145,10 +143,12 @@ public class TestEngine {
 		int inputBlocks = engine.loadFileAndCharacterizeBlocks();
 		assertEquals(17,inputBlocks);
 		int outputParagraphs = engine.exportMarkDown(outputFileName); //, "happyhippo"
-		assertEquals(15,outputParagraphs); //used to be 17
+		assertEquals(15,outputParagraphs);
 		
 		List<String> report = engine.reportWithStats();
 		assertEquals("Total number of paragraphs: 17", report.get(0).strip());
+		System.out.println(report.get(0).strip());
+		System.out.println(report.get(1).strip());
 		assertEquals("Total number of words: 1145", report.get(1).strip());
 		
 		File outputFile = new File("Resources//Outputs//hippocratesOath.txt.md");
@@ -183,7 +183,8 @@ public class TestEngine {
 		setupProfileHippo();
 		engine.registerInputRuleSetForPlainFiles(inputSpec);
 		String outputFileName = "Resources//Outputs//hippocratesOath.txt.pdf";
-		engine.loadFileAndCharacterizeBlocks();
+		
+		engine.loadFileAndCharacterizeBlocks();		//was missing
 		int outputParagraphs = engine.exportPdf(outputFileName);
 		assertEquals(15,outputParagraphs);
 		//does not work: some contents are auto-generated and differ.
@@ -201,8 +202,8 @@ public class TestEngine {
 		setupProfileEcon();
 		engine.registerInputRuleSetForPlainFiles(inputSpec);
 		String outputFileName = "Resources//Outputs//economy_mt.txt.pdf";
-		engine.loadFileAndCharacterizeBlocks();
-		
+
+		engine.loadFileAndCharacterizeBlocks();		//was missing
 		int outputParagraphs = engine.exportPdf(outputFileName);
 		assertEquals(17,outputParagraphs);
 //		File outputFile = new File("Resources//Outputs//economy_mt.txt.md");
@@ -221,8 +222,8 @@ public class TestEngine {
 		List<String> prefixes = new ArrayList<String>(); 
 		prefixes.add("<H1>");prefixes.add("<H2>");prefixes.add("<i>");prefixes.add("<b>");prefixes.add("<p>");
 		engine.registerInputRuleSetForAnnotatedFiles(inputSpec, prefixes);
-		engine.loadFileAndCharacterizeBlocks();
 		
+		engine.loadFileAndCharacterizeBlocks();		//was missing
 		String outputFileName = "Resources//Outputs//hippocratesOathHtml.md";
 		int outputParagraphs = engine.exportMarkDown(outputFileName);
 		assertEquals(17,outputParagraphs);

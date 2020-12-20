@@ -45,46 +45,6 @@ public class Engine implements IPlainTextDocumentEngine {
 		Path p = Paths.get(this.filePath);
 		this.simpleInputFileName = p.getFileName().toString();
 	}
-	// 	TODO delete(?) later
-	public String getAlias()
-	{
-		return this.alias;
-	}
-	
-	// 	TODO delete later
-	public static void main(String[] args) {
-		
-		String path = "Resources/SampleDocs/economy_mt.txt";
-		String alekoz = "alekoz";
-		
-		Engine engine = new Engine(path, "RAW", alekoz);
-		List<String> stats = engine.reportWithStats();
-		
-		for(String string : stats)
-		{
-			System.out.print(string);
-		}
-		//hippo
-		List<List<String>> ruleSetString = new ArrayList<>();
-		List<String> h1List = new ArrayList<String>(); ruleSetString.add(h1List);
-		h1List.add("H1");h1List.add("STARTS_WITH"); h1List.add("OATH AND");
-		List<String> omList = new ArrayList<String>(); ruleSetString.add(omList);
-		omList.add("OMIT");omList.add("POSITIONS");omList.add("1,4");	
-		List<String> h2List = new ArrayList<String>(); ruleSetString.add(h2List);
-		h2List.add("H2");h2List.add("ALL_CAPS");
-		List<String> italicsList = new ArrayList<String>(); ruleSetString.add(italicsList);
-		italicsList.add("<I>");italicsList.add("POSITIONS"); italicsList.add("5,17");
-		
-		engine.registerInputRuleSetForPlainFiles(ruleSetString);
-		engine.loadFileAndCharacterizeBlocks();
-		String endPath = "C:\\Users\\Alex\\Desktop\\" + engine.getAlias() + ".pdf";
-		engine.exportPdf(endPath);
-		
-		// markdown
-		endPath = "C:\\Users\\Alex\\Desktop\\" + engine.getAlias() + ".md";
-		engine.exportMarkDown(endPath);
-		
-	}
 	
 	/**
 	 * Registers a global rule set for a plain file at the main engine

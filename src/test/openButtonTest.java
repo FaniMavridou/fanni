@@ -18,8 +18,6 @@ import javafx.stage.Stage;
 public class openButtonTest {
 
 	private static FirstController view;
-	private static MainApp mainApp;
-	//private static Stage classStage = new Stage();
 	
 	
 	@Rule public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
@@ -35,12 +33,12 @@ public class openButtonTest {
 	
 	@Test
 	public void test() throws Exception  {
-		//fail("Not yet implemented");
+		
 		view = new FirstController();
 		view.initializeButtonForTest();
 		view.setType("RAW");
 		view.HandleButtonAction(null);
-		assertEquals("C:\\Users\\vamva\\Desktop\\atlantis.txt",view.getPath()); //auto epeidh allazei pantou(to path) mporeis na mhn to elegxeis
+		//assertEquals("your path",view.getPath()); //auto epeidh allazei pantou(to path) mporeis na mhn to elegxeis
 		assertEquals("atlantis",view.getName());
 		
 	}

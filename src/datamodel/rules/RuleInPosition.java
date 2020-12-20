@@ -28,7 +28,7 @@ public class RuleInPosition extends AbstractRule {
 	public String toString()
 	{
 		String nums = positions.toString();
-
+		
 		return " IN_POS " + nums;
 	}
 

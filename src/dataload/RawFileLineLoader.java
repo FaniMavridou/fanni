@@ -35,10 +35,10 @@ public class RawFileLineLoader {
 				String paragraph = scanner.next();
 				if(paragraph == "\s") {
 					continue;
-				}
-				lines = Arrays.asList(paragraph.split("\r\n"));	
+				}					
+				lines = Arrays.asList(paragraph.split("\r\n"));		
 				lineblocks.add(new LineBlock(lines, position));		
-				position++;		
+				position++;				
 			}
 			scanner.close();
 			 
