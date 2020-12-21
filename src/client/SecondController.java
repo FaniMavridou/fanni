@@ -17,7 +17,7 @@ public class SecondController implements Initializable{
 	
 	public void getStats(List<String> stats)
 	{
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		text.setMinHeight(stats.size()*61);
 		String t = "";
 		for(String string : stats)
 		{

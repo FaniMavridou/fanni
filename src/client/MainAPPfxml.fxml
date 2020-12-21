@@ -38,10 +38,23 @@
          <font>
             <Font size="26.0" />
          </font></Button>
-      <Line endX="185.56655883789062" endY="269.0064392089844" fill="#bcc336" rotate="-23.2" startX="225.0" startY="214.0" stroke="#d3c045" strokeWidth="4.0" />
-      <Line endX="181.9857635498047" endY="252.0" fill="#bcc336" layoutX="10.0" layoutY="10.0" rotate="-23.2" startX="244.99325561523438" startY="237.18629455566406" stroke="#d3c045" strokeWidth="4.0" />
-      <Line endX="162.78594970703125" endY="207.0532989501953" fill="#bcc336" layoutX="17.0" layoutY="16.0" rotate="-23.2" startX="232.2953338623047" startY="231.62875366210938" stroke="#d3c045" strokeWidth="4.0" />
-      <Line endX="227.65072631835938" endY="264.5791320800781" fill="#bcc336" layoutX="10.0" layoutY="10.0" rotate="-23.2" startX="179.27484130859375" startY="220.77249145507812" stroke="#d3c045" strokeWidth="4.0" />
-      <Line endX="223.82000732421875" endY="257.6394348144531" fill="#bcc336" layoutX="10.0" layoutY="10.0" rotate="-23.2" startX="218.77366638183594" startY="193.20921325683594" stroke="#d3c045" strokeWidth="4.0" />
+      <Line endX="185.56655883789062" endY="269.0064392089844" fill="#bcc336" layoutX="7.0" layoutY="4.0" rotate="-20.6" startX="225.0" startY="214.0" stroke="#d3c045" strokeWidth="4.0" />
+      <Line endX="181.9857635498047" endY="252.0" fill="#bcc336" layoutX="17.0" layoutY="14.0" rotate="-20.6" startX="244.99325561523438" startY="237.18629455566406" stroke="#d3c045" strokeWidth="4.0" />
+      <Line endX="162.78594970703125" endY="207.0532989501953" fill="#bcc336" layoutX="24.0" layoutY="20.0" rotate="-20.6" startX="232.2953338623047" startY="231.62875366210938" stroke="#d3c045" strokeWidth="4.0" />
+      <Line endX="227.65072631835938" endY="264.5791320800781" fill="#bcc336" layoutX="17.0" layoutY="14.0" rotate="-20.6" startX="179.27484130859375" startY="220.77249145507812" stroke="#d3c045" strokeWidth="4.0" />
+      <Line endX="223.82000732421875" endY="257.6394348144531" fill="#bcc336" layoutX="17.0" layoutY="14.0" rotate="-20.6" startX="218.77366638183594" startY="193.20921325683594" stroke="#d3c045" strokeWidth="4.0" />
+      <Line endX="109.0" endY="340.0" startX="225.75735473632812" startY="267.0" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="357.0" endY="328.0" layoutX="10.0" layoutY="10.0" startX="217.24264526367188" startY="254.0" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="299.0" endY="328.70709228515625" layoutX="10.0" layoutY="10.0" startX="352.7573547363281" startY="328.70709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="98.29290771484375" endY="330.70709228515625" layoutX="10.0" layoutY="10.0" startX="152.0" startY="330.70709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="423.0" endY="412.0" layoutX="10.0" layoutY="10.0" startX="298.5" startY="329.20709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="30.0" endY="412.0" layoutX="10.0" layoutY="10.0" startX="152.5" startY="331.20709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="98.0" endY="412.70709228515625" layoutX="10.0" layoutY="10.0" startX="29.29290771484375" startY="412.70709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="353.0" endY="412.70709228515625" layoutX="10.0" layoutY="10.0" startX="420.7573547363281" startY="412.70709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="467.20703125" endY="482.20709228515625" layoutX="10.0" layoutY="10.0" startX="352.5" startY="413.20709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="386.0" endY="482.70709228515625" layoutX="10.0" layoutY="10.0" startX="466.70703125" startY="482.70709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="-10.0" endY="482.0" layoutX="10.0" layoutY="10.0" startX="98.5" startY="413.20709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="65.99998474121094" endY="482.70709228515625" layoutX="10.0" layoutY="10.0" startX="-3.7071075439453125" startY="482.70709228515625" stroke="#1a5708" strokeWidth="6.0" />
+      <Line endX="45.757354736328125" layoutX="215.0" layoutY="568.0" startX="-16.242645263671875" stroke="#5b2929" strokeWidth="27.0" />
    </children>
 </AnchorPane>

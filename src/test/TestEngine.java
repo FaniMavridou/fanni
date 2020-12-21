@@ -147,8 +147,6 @@ public class TestEngine {
 		
 		List<String> report = engine.reportWithStats();
 		assertEquals("Total number of paragraphs: 17", report.get(0).strip());
-		System.out.println(report.get(0).strip());
-		System.out.println(report.get(1).strip());
 		assertEquals("Total number of words: 1145", report.get(1).strip());
 		
 		File outputFile = new File("Resources//Outputs//hippocratesOath.txt.md");

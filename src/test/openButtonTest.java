@@ -1,19 +1,10 @@
 package test;
 
 import static org.junit.Assert.*;
-
-import java.io.IOException;
-
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-
 import client.FirstController;
-import client.MainApp;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.stage.Stage;
+
 
 public class openButtonTest {
 
